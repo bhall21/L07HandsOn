@@ -1,0 +1,14 @@
+<script type="application/javascript">
+    let deletedUser = function(id) {
+        fetch("/users/admin/editUser/" + id, {
+            method: "PUT"
+        }).then(result => {
+            window.location = "/users"
+        })
+    }
+</script>
+
+<p>User ID:{{users.UserId}}, Name:{{users.FirstName}} {{users.LastName}},   Email:{{users.Email}} , Username:{{users.Username}},  Password:{{users.Password}}</p>
+
+
+<a onclick="deletedUser({{users.UserId}})">delete user</a>
